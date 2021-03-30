@@ -14,8 +14,9 @@ ts_project(
     srcs = glob(["*.ts"]),
     tsconfig = "tsconfig",
     deps = [
-        "//libraries/a",
-        "//libraries/b",
+        "//libraries/a:a_js",
+        "//libraries/b:b_js",
+        "@npm//@types/node",
     ],
 )
 
@@ -25,5 +26,4 @@ nodejs_binary(
         "app",
     ],
     entry_point = "index.ts",
-    # templated_args = ["--bazel_patch_module_resolver"],
 )

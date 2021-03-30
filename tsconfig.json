@@ -5,6 +5,7 @@
     "lib": ["esnext"],
     "strict": true,
     "baseUrl": ".",
+    "rootDir": ".",
     "paths": {
       "@libraries/*": ["./libraries/*"]
     }
