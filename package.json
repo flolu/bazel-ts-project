@@ -1,0 +1,12 @@
+{
+  "name": "bazel-ts-project",
+  "license": "MIT",
+  "devDependencies": {
+    "@bazel/bazelisk": "^1.7.5",
+    "@bazel/typescript": "^3.2.3",
+    "typescript": "^4.2.3"
+  },
+  "scripts": {
+    "start": "bazelisk run //app:bin"
+  }
+}
