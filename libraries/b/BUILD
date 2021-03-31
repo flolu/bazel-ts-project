@@ -12,6 +12,7 @@ ts_config(
 ts_project(
     name = "b",
     srcs = glob(["*.ts"]),
+    declaration = True,
     tsconfig = "tsconfig",
 )
 
