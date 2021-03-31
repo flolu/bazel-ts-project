@@ -1,0 +1,8 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "types": ["jasmine", "node"]
+  },
+  "include": ["index.test.ts"],
+  "exclude": ["index.ts"]
+}
