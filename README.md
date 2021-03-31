@@ -1,3 +1,7 @@
+# Fixed!
+
+Problem has been fixed by this commit: https://github.com/flolu/bazel-ts-project/commit/15f6e4bd8a94d0ee299618bc082c81874c73100f
+
 # Usage
 
 Setup
