@@ -23,8 +23,21 @@
       "./libraries/a",
       "./libraries/b",
 
+      "./bazel-out/host/bin/libraries/a",
+      "./bazel-out/darwin-fastbuild/bin/libraries/a",
       "./bazel-out/k8-fastbuild/bin/libraries/a",
-      "./bazel-out/k8-fastbuild/bin/libraries/b"
+      "./bazel-out/x64_windows-fastbuild/bin/libraries/a",
+      "./bazel-out/darwin-dbg/bin/libraries/a",
+      "./bazel-out/k8-dbg/bin/libraries/a",
+      "./bazel-out/x64_windows-dbg/bin/libraries/a",
+
+      "./bazel-out/host/bin/libraries/b",
+      "./bazel-out/darwin-fastbuild/bin/libraries/b",
+      "./bazel-out/k8-fastbuild/bin/libraries/b",
+      "./bazel-out/x64_windows-fastbuild/bin/libraries/b",
+      "./bazel-out/darwin-dbg/bin/libraries/b",
+      "./bazel-out/k8-dbg/bin/libraries/b",
+      "./bazel-out/x64_windows-dbg/bin/libraries/b"
     ]
   }
 }
