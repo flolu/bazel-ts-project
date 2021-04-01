@@ -6,7 +6,7 @@ package(default_visibility = ["//visibility:public"])
 
 ts_config(
     name = "tsconfig_lib",
-    src = "tsconfig.lib.json",
+    src = "tsconfig.json",
     deps = ["//:tsconfig"],
 )
 

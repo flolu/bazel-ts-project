@@ -1,10 +1,4 @@
 {
   "extends": "../tsconfig.json",
-  "compilerOptions": {
-    "moduleResolution": "node"
-  },
-  "references": [
-    { "path": "../libraries/a/tsconfig.lib.json" },
-    { "path": "../libraries/b/tsconfig.lib.json" }
-  ]
+  "references": [{ "path": "../libraries/a" }, { "path": "../libraries/b" }]
 }
