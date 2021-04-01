@@ -5,26 +5,24 @@ load("@npm//@bazel/jasmine:index.bzl", "jasmine_node_test")
 package(default_visibility = ["//visibility:public"])
 
 ts_config(
-    name = "tsconfig",
-    src = "tsconfig.json",
-    deps = ["//:tsconfig"],
-)
-
-ts_config(
     name = "tsconfig_lib",
     src = "tsconfig.lib.json",
-    deps = [":tsconfig"],
+    deps = ["//:tsconfig"],
 )
 
 ts_config(
     name = "tsconfig_test",
     src = "tsconfig.test.json",
-    deps = [":tsconfig"],
+    deps = ["//:tsconfig"],
 )
 
 ts_project(
     name = "a",
-    srcs = ["index.ts"],
+    srcs = [
+        "a.ts",
+        "index.ts",
+    ],
+    composite = True,
     declaration = True,
     tsconfig = "tsconfig_lib",
     deps = ["@npm//@types/node"],
@@ -42,6 +40,7 @@ js_library(
 ts_project(
     name = "a_test",
     srcs = ["index.test.ts"],
+    composite = True,
     declaration = True,
     tsconfig = "tsconfig_test",
     deps = [

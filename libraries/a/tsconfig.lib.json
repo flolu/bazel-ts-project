@@ -1,8 +1,7 @@
 {
-  "extends": "./tsconfig.json",
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "types": ["node"]
   },
-  "include": ["index.ts"],
-  "exclude": ["index.test.ts"]
+  "include": ["index.ts", "a.ts"]
 }

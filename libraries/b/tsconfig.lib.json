@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "moduleResolution": "node",
-    "declaration": true
-  }
+    "types": ["node"]
+  },
+  "include": ["index.ts"]
 }

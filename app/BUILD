@@ -6,12 +6,18 @@ package(default_visibility = ["//visibility:public"])
 ts_config(
     name = "tsconfig",
     src = "tsconfig.json",
-    deps = ["//:tsconfig"],
+    deps = [
+        "//:tsconfig",
+        "//libraries/a:tsconfig_lib",
+        "//libraries/b:tsconfig_lib",
+    ],
 )
 
 ts_project(
     name = "app",
     srcs = glob(["*.ts"]),
+    composite = True,
+    declaration = True,
     tsconfig = "tsconfig",
     deps = [
         "//libraries/a:a_js",

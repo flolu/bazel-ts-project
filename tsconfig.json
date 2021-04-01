@@ -4,10 +4,27 @@
     "module": "commonjs",
     "lib": ["esnext"],
     "strict": true,
+    "resolveJsonModule": true,
+    "noUnusedLocals": true,
+    "composite": true,
+    "esModuleInterop": true,
+    "noUnusedParameters": true,
+    "preserveConstEnums": true,
+    "allowSyntheticDefaultImports": true,
+    "noFallthroughCasesInSwitch": true,
+    "declaration": true,
     "baseUrl": ".",
     "rootDir": ".",
     "paths": {
-      "@libraries/*": ["./libraries/*"]
-    }
+      "@libs/*": ["./libraries/*"]
+    },
+    "rootDirs": [
+      ".",
+      "./libraries/a",
+      "./libraries/b",
+
+      "./bazel-out/k8-fastbuild/bin/libraries/a",
+      "./bazel-out/k8-fastbuild/bin/libraries/b"
+    ]
   }
 }
