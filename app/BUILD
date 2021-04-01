@@ -1,5 +1,6 @@
 load("@npm//@bazel/typescript:index.bzl", "ts_config", "ts_project")
 load("@build_bazel_rules_nodejs//:index.bzl", "nodejs_binary")
+load("@npm//@bazel/jasmine:index.bzl", "jasmine_node_test")
 
 package(default_visibility = ["//visibility:public"])
 
@@ -13,9 +14,19 @@ ts_config(
     ],
 )
 
+ts_config(
+    name = "tsconfig_test",
+    src = "tsconfig.test.json",
+    deps = [
+        "//:tsconfig",
+        "//libraries/a:tsconfig_lib",
+        "//libraries/b:tsconfig_lib",
+    ],
+)
+
 ts_project(
     name = "app",
-    srcs = glob(["*.ts"]),
+    srcs = ["index.ts"],
     composite = True,
     declaration = True,
     tsconfig = "tsconfig",
@@ -24,6 +35,26 @@ ts_project(
         "//libraries/b:b_js",
         "@npm//@types/node",
     ],
+)
+
+ts_project(
+    name = "app_test",
+    srcs = ["index.test.ts"],
+    composite = True,
+    declaration = True,
+    tsconfig = "tsconfig_test",
+    deps = [
+        "app",
+        "@npm//@types/jasmine",
+        "@npm//@types/node",
+    ],
+)
+
+jasmine_node_test(
+    name = "test",
+    config_file = "jasmine.json",
+    templated_args = ["--bazel_patch_module_resolver"],
+    deps = ["app_test"],
 )
 
 nodejs_binary(

@@ -20,9 +20,17 @@
     },
     "rootDirs": [
       ".",
-      "./libraries/a",
-      "./libraries/b",
 
+      "./app",
+      "./bazel-out/host/bin/app",
+      "./bazel-out/darwin-fastbuild/bin/app",
+      "./bazel-out/k8-fastbuild/bin/app",
+      "./bazel-out/x64_windows-fastbuild/bin/app",
+      "./bazel-out/darwin-dbg/bin/app",
+      "./bazel-out/k8-dbg/bin/app",
+      "./bazel-out/x64_windows-dbg/bin/app",
+
+      "./libraries/a",
       "./bazel-out/host/bin/libraries/a",
       "./bazel-out/darwin-fastbuild/bin/libraries/a",
       "./bazel-out/k8-fastbuild/bin/libraries/a",
@@ -31,6 +39,7 @@
       "./bazel-out/k8-dbg/bin/libraries/a",
       "./bazel-out/x64_windows-dbg/bin/libraries/a",
 
+      "./libraries/b",
       "./bazel-out/host/bin/libraries/b",
       "./bazel-out/darwin-fastbuild/bin/libraries/b",
       "./bazel-out/k8-fastbuild/bin/libraries/b",
